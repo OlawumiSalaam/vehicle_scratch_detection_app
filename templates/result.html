@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detection Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-6 rounded-xl shadow-md max-w-4xl">
+    <h2 class="text-xl font-semibold mb-4 text-center">Detection Result</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-lg font-medium text-center mb-2">Original Image</h3>
+        <img src="{{ url_for('static', filename='uploads/' + original) }}" class="rounded w-full">
+      </div>
+      <div>
+        <h3 class="text-lg font-medium text-center mb-2">Predicted Output</h3>
+        <img src="{{ url_for('static', filename='uploads/' + predicted) }}" class="rounded w-full">
+      </div>
+    </div>
+    <div class="text-center mt-6">
+      <a href="/" class="text-blue-600 hover:underline">Try another image</a>
+    </div>
+  </div>
+</body>
+</html>
